@@ -1,2 +1,5 @@
 # KangHuaTai.github.io
-# 喵星人
+<body>
+<p style="text-align:200; color:#F00">一只喵星人</p>
+</body>
+</html>
