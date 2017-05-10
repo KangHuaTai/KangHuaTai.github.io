@@ -1,0 +1,34 @@
+什么是线程
+在一个程序中同时运行的多个独立流程，每一个独立的流程就是一个线程。
+线程并发:多个线程并发执行
+主线程:当JVM启动之后，加载类文件，发现main方法，那么就会为main方法创建一个线程，用于main方法执行，这个为main方法创建的线程称为主线程。
+在Java中创建线程的方法有两种
+
+方法一:继承java.lang.Thread类。
+继承Thread类
+自定义一个线程类继承自Thread
+重写Thread的run方法
+创建一个该类的对象
+调用该类继承自Thread的start方法开启线程。
+
+方法二:实现java.lang.Runnable接口。
+Runnable接口开发线程 
+用户开发一个类实现Runnable接口
+实现run()
+new Thread(Runnable).start()运行线程 
+
+A extends Thread A extends Thread：
+简单
+不能再继承其他类了(Java单继承)
+同份资源不共享
+A implements Runnable:( A implements Runnable:(推荐)
+多个线程共享一个目标资源，适合多线程处理同一份资源。
+该类还可以继承其他类，也可以实现其他接口。
+
+线程同步:
+synchronized(object){
+      代码块
+    }
+线程的生命周期：
+创建-就绪-（阻塞）-运行-死亡。
+线程睡眠：sleep。
