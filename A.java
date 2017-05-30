@@ -1,13 +1,21 @@
-import java.text.*;
-import java.util.*;
+import java.net.*;
+import java.io.*;
 public class A{
 	public static void main(String[] ages){
-	//得到long类型当前时间
-	//long l = System.currentTimeMillis();
-	//new日期对象
-	Date date = new Date();
-	//转换提日期输出格式
-	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-	System.out.println(dateFormat.format(date));
+		try{
+			//创建服务端 并开通注册端口
+			ServerSocket serverSocket = new ServerSocket(1122);
+			while(true){
+				System.out.println("服务器端创建成功");
+				//监听对应端口
+				Socket sockect = serverSocket.accept();
+				System.out.println("正在监听端口");
+				String address = sockect.getLocalAddress().getHostAddress();
+				//getHostName()
+				System.out.println("有人来访问地址是："+address);
+			}
+		}catch(IOException e){
+			e.printStackTrace();
+		}
 	}
 }
