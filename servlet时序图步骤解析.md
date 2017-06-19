@@ -1,0 +1,9 @@
+servlet时序图步骤解析
+1.Web Client向Servlet容器(Tomcat)发出请求
+2.Servlet容器接收WebClient的请求
+3.Servlet容器创建一个HttpRequest对象，将Web Client请求的信息封装到这个对象中
+4.Servlet容器创建一个HttpResponse对象
+5.Servlet容器调用HttpServlet对象的service方法，把HttpRequest对象与HttpResponse对象作为参数传给HttpServlet对象
+6.HttpServlet调用HttpRequest对象的有关方法，获取Http请求信息
+7.HttpServlet调用HttpResponse对象的有关方法，生成响应数据
+8.Servlet容器把HttpServlet的响应结果传给Web Client
